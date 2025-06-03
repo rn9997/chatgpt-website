@@ -11,24 +11,35 @@
       padding: 0;
       box-sizing: border-box;
       font-family: 'Segoe UI', sans-serif;
+      scroll-behavior: smooth;
     }
+
     body {
       background-color: #111;
       color: #fff;
-      padding: 2rem;
       transition: background 0.4s, color 0.4s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
     }
+
     header {
       text-align: center;
-      margin-bottom: 2rem;
+      animation: fadeInDown 1s ease;
     }
+
     header img {
       width: 90px;
       margin-bottom: 10px;
+      animation: popIn 1s ease;
     }
+
     h1 {
       font-size: 2.5rem;
+      margin-bottom: 0.5rem;
     }
+
     .toggle-mode {
       position: fixed;
       top: 20px;
@@ -39,57 +50,115 @@
       padding: 10px 15px;
       cursor: pointer;
       border-radius: 6px;
+      z-index: 1000;
+      transition: 0.3s;
     }
+
+    .toggle-mode:hover {
+      background: #444;
+    }
+
     section {
       max-width: 900px;
+      width: 100%;
+      text-align: center;
       margin: 2rem auto;
+      opacity: 0;
+      animation: fadeInUp 1s forwards;
     }
+
+    section:nth-of-type(1) { animation-delay: 0.2s; }
+    section:nth-of-type(2) { animation-delay: 0.4s; }
+    section:nth-of-type(3) { animation-delay: 0.6s; }
+    section:nth-of-type(4) { animation-delay: 0.8s; }
+    section:nth-of-type(5) { animation-delay: 1s; }
+    section:nth-of-type(6) { animation-delay: 1.2s; }
+    section:nth-of-type(7) { animation-delay: 1.4s; }
+    section:nth-of-type(8) { animation-delay: 1.6s; }
+    section:nth-of-type(9) { animation-delay: 1.8s; }
+
     .box {
       background: #1a1a1a;
-      margin: 1rem 0;
       padding: 1.5rem;
       border-radius: 12px;
       box-shadow: 0 0 10px #0005;
-      transition: 0.3s;
+      margin: 1rem 0;
+      transition: transform 0.3s, background 0.3s;
     }
+
     .box:hover {
       background: #2a2a2a;
       transform: scale(1.01);
     }
+
     h2 {
       font-size: 1.8rem;
       margin-bottom: 1rem;
       border-bottom: 2px solid #444;
+      display: inline-block;
     }
+
     ul, p {
       line-height: 1.6;
-      margin: 0.8rem 0;
+      margin: 0.8rem auto;
+      text-align: left;
     }
+
+    ul {
+      max-width: 700px;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li::before {
+      content: "• ";
+      color: #0f0;
+    }
+
     .light-mode {
       background-color: #f4f4f4;
       color: #000;
     }
+
     .light-mode .box {
       background: #fff;
       color: #000;
       box-shadow: 0 0 10px #ccc;
     }
+
     footer {
       margin-top: 3rem;
       text-align: center;
       font-size: 0.9rem;
       opacity: 0.6;
     }
+
     code {
       background: #333;
       padding: 0.2rem 0.4rem;
       border-radius: 4px;
       font-family: monospace;
     }
+
     .quote {
       font-style: italic;
       opacity: 0.8;
       margin-top: 1rem;
+    }
+
+    @keyframes fadeInUp {
+      0% { transform: translateY(20px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeInDown {
+      0% { transform: translateY(-30px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
     }
   </style>
 </head>
@@ -104,89 +173,82 @@
 
   <section class="box">
     <h2>🧠 What is ChatGPT?</h2>
-    <p>ChatGPT is an advanced AI chatbot developed by OpenAI. It uses a type of artificial intelligence called a <strong>large language model</strong> to understand and generate human-like text based on the input it receives.</p>
-    <p>It can hold conversations, answer questions, write stories, explain topics, code, translate languages, and more — all in a way that sounds natural and intelligent.</p>
+    <p>ChatGPT is an advanced AI chatbot developed by OpenAI. It uses a large language model to understand and generate human-like text responses based on input it receives.</p>
   </section>
 
   <section class="box">
     <h2>🏢 Who Created It?</h2>
-    <p>ChatGPT was created by <strong>OpenAI</strong>, an AI research company founded in 2015. Some of its key founders include Elon Musk and Sam Altman. The goal of OpenAI is to create artificial intelligence that benefits all of humanity.</p>
+    <p>ChatGPT was created by <strong>OpenAI</strong>, an AI research company founded in 2015. Key figures include Elon Musk and Sam Altman. Their mission: ensure AI benefits everyone.</p>
   </section>
 
   <section class="box">
     <h2>⚙️ How Does It Work?</h2>
-    <p>ChatGPT is based on a deep learning model called <strong>GPT</strong> (Generative Pre-trained Transformer). It was trained on huge amounts of text from books, websites, and articles to learn grammar, facts, logic, and even style.</p>
-    <p>It doesn’t "think" like a human, but it’s really good at predicting the next best word in a sentence — which makes it seem like it’s having a conversation.</p>
+    <p>It’s powered by a deep learning model called GPT (Generative Pre-trained Transformer). It reads tons of text and learns to predict what comes next in a sentence.</p>
   </section>
 
   <section class="box">
-    <h2>✅ Pros of ChatGPT</h2>
+    <h2>✅ Pros</h2>
     <ul>
-      <li>Instant answers to complex questions</li>
-      <li>Great for learning, writing, and brainstorming</li>
-      <li>24/7 availability</li>
-      <li>Understands many languages</li>
-      <li>Free basic access (with optional upgrades)</li>
-      <li>Supports coding, maths, and schoolwork</li>
-      <li>No ads or distractions</li>
+      <li>Instant answers, 24/7</li>
+      <li>Great for brainstorming, essays, revision</li>
+      <li>Understands context and follow-up questions</li>
+      <li>Multiple language support</li>
+      <li>Free to use (basic access)</li>
     </ul>
   </section>
 
   <section class="box">
-    <h2>❌ Cons of ChatGPT</h2>
+    <h2>❌ Cons</h2>
     <ul>
-      <li>Sometimes gives wrong or outdated info</li>
-      <li>May sound confident even when it's wrong</li>
-      <li>Doesn’t truly “understand” feelings or meaning</li>
-      <li>Can be used for cheating or misuse</li>
-      <li>Limited awareness of recent events</li>
-      <li>Can reflect biases from training data</li>
+      <li>May give wrong/outdated info</li>
+      <li>Sometimes confidently incorrect</li>
+      <li>Doesn’t truly “understand” meaning</li>
+      <li>Could be misused for cheating</li>
+      <li>Can reflect training data bias</li>
     </ul>
   </section>
 
   <section class="box">
     <h2>⚠️ Ethical Concerns</h2>
     <ul>
-      <li><strong>Plagiarism:</strong> Students might misuse it to write essays for them</li>
-      <li><strong>Bias:</strong> Its answers may reflect societal or political bias</li>
-      <li><strong>Misinformation:</strong> It sometimes generates believable but incorrect answers</li>
-      <li><strong>Dependency:</strong> People may rely too heavily on AI to think or create</li>
+      <li><strong>Plagiarism:</strong> students using it to write their work</li>
+      <li><strong>Bias:</strong> data may reflect real-world prejudice</li>
+      <li><strong>Over-reliance:</strong> people using it instead of thinking</li>
     </ul>
   </section>
 
   <section class="box">
     <h2>🤖 Fun Facts</h2>
     <ul>
-      <li>GPT stands for "Generative Pre-trained Transformer"</li>
-      <li>ChatGPT reached 1 million users in just 5 days</li>
-      <li>There are several versions: GPT-3.5, GPT-4, etc.</li>
-      <li>You can use it to write poems, jokes, and even code games</li>
+      <li>GPT = Generative Pre-trained Transformer</li>
+      <li>Reached 1 million users in 5 days</li>
+      <li>OpenAI also made DALL·E and Codex</li>
     </ul>
   </section>
 
   <section class="box">
-    <h2>📚 Good Uses for Students</h2>
+    <h2>📚 Student Uses</h2>
     <ul>
-      <li>Asking for help understanding topics</li>
-      <li>Practising languages or maths problems</li>
-      <li>Brainstorming ideas for projects</li>
-      <li>Learning new words or how to structure essays</li>
+      <li>Practice essays and writing tips</li>
+      <li>Understand difficult topics</li>
+      <li>Revise definitions or key concepts</li>
+      <li>Generate creative ideas</li>
     </ul>
   </section>
 
   <section class="box">
     <h2>🔍 Conclusion</h2>
-    <p>ChatGPT is one of the most advanced chatbots ever made. It’s incredibly powerful — but like any tool, it needs to be used responsibly. It can support learning, creativity, and communication, but it should never replace real thinking, teachers, or fact-checking.</p>
-    <p class="quote">“Technology is a useful servant but a dangerous master.” – Christian Lous Lange</p>
+    <p>ChatGPT is one of the most powerful tools today — useful for students, teachers, creators, and developers. But with great power comes great responsibility. Use it wisely.</p>
+    <p class="quote">“AI will not replace you. A person using AI will.”</p>
   </section>
 
   <footer>
-    © 2025 | Created by [Your Name] for educational purposes only | ChatGPT logo from Wikimedia Commons
+    © 2025 | Created by [Your Name] | Educational use only | Logo: Wikimedia Commons
   </footer>
 
   <script>
     function toggleMode() {
-      document.body.classList.toggle('light-mode');
+      document.body.classList.toggle("light-mode");
     }
   </script>
 </body>
