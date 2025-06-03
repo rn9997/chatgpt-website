@@ -76,6 +76,7 @@
     section:nth-of-type(7) { animation-delay: 1.4s; }
     section:nth-of-type(8) { animation-delay: 1.6s; }
     section:nth-of-type(9) { animation-delay: 1.8s; }
+    section:nth-of-type(10) { animation-delay: 2s; }
 
     .box {
       background: #1a1a1a;
@@ -146,6 +147,27 @@
       margin-top: 1rem;
     }
 
+    .about-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 12px 24px;
+      font-size: 1rem;
+      background: linear-gradient(135deg, #0f0, #0b0);
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 0 12px #0f05;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .about-button:hover {
+      background: linear-gradient(135deg, #0b0, #0f0);
+      box-shadow: 0 0 20px #0f08;
+      transform: scale(1.05);
+    }
+
     @keyframes fadeInUp {
       0% { transform: translateY(20px); opacity: 0; }
       100% { transform: translateY(0); opacity: 1; }
@@ -174,6 +196,13 @@
   <section class="box">
     <h2>🧠 What is ChatGPT?</h2>
     <p>ChatGPT is an advanced AI chatbot developed by OpenAI. It uses a large language model to understand and generate human-like text responses based on input it receives.</p>
+  </section>
+
+  <section class="box">
+    <h2>👤 About Me</h2>
+    <p>Hi! I'm Raihan — the creator of this website. I love building cool websites, learning about AI, and sharing knowledge online.</p>
+    <p>Want to know more about me? Click below:</p>
+    <a href="https://rn9997.github.io/about-myself-project/" target="_blank" class="about-button">Visit My Profile</a>
   </section>
 
   <section class="box">
